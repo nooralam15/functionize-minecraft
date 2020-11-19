@@ -44,46 +44,31 @@ steveImgEl.addEventListener("click", selectSteve);
 alexImgEl.addEventListener("click", selectAlex);
 villagerImgEl.addEventListener("click", selectVillager);
 
-function characterSelect() {
-  if (character == "steve") {
-    characterSelectStyling(steveImgEl, alexImgEl, villagerImgEl)
-  } 
-  else if (character == "alex") {
-    characterSelectStyling(alexImgEl, steveImgEl, villagerImgEl)
-
-  }
-  else if (character == "villager") {
-    characterSelectStyling(villagerImgEl, alexImgEl, steveImgEl)
-
-  }
+function selectSteve() {
+  character = "steve"
+  characterSelectStyling(steveImgEl, alexImgEl, villagerImgEl)
 }
+
+function selectAlex() {
+  character = "alex"
+  characterSelectStyling(alexImgEl, steveImgEl, villagerImgEl)
+
+}
+
+function selectVillager() {
+  character = "villager"
+  characterSelectStyling(villagerImgEl, alexImgEl, steveImgEl)
+
+}
+
 function characterSelectStyling(activeUser, inac1, inac2) {
   activeUser.classList.add("active");
   inac1.classList.remove("active");
   inac2.classList.remove("active");
 
 }
-// function selectSteve() {
-//   character = "steve"
-//   steveImgEl.classList.add("active");
-//   alexImgEl.classList.remove("active");
-//   villagerImgEl.classList.remove("active");
-// }
 
-// function selectAlex() {
-//   character = "alex";
-//   steveImgEl.classList.remove("active");
-//   alexImgEl.classList.add("active");
-//   villagerImgEl.classList.remove("active");
-// }
-
-// function selectVillager() {
-//   character = "villager";
-//   steveImgEl.classList.remove("active");
-//   alexImgEl.classList.remove("active");
-//   villagerImgEl.classList.add("active");
-// }
-
+//function that simulates the catch for each player
 function simCatch(probCod, probSalmon, pobTropical) {
     let randNum = Math.random();
     if (randNum < probCod) {
